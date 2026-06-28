@@ -321,6 +321,7 @@ strong{font-weight:600}
 .split__body p + p{margin-top:16px}
 .split__body .btn-row{margin-top:30px}
 .facts{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.salon__intro{margin-top:22px}
 .fact{flex:1 1 130px;padding:18px 20px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md)}
 .fact .n{font-family:var(--display);font-weight:600;font-size:1.8rem;color:var(--ink);line-height:1}
 .fact .t{font-size:.84rem;color:var(--mocha-600);margin-top:6px;display:block}
@@ -421,7 +422,7 @@ strong{font-weight:600}
   scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
 .carousel__track::-webkit-scrollbar{display:none}
 .carousel__track > *{flex:0 0 calc((100% - 2*var(--gap)) / 3);scroll-snap-align:start}
-.carousel__nav{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}
+.carousel__nav{display:flex;justify-content:center;gap:10px;margin-top:24px}
 .carousel__btn{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
   border:1.5px solid var(--line);background:var(--paper);color:var(--cocoa);
   transition:background var(--t) var(--ease),border-color var(--t) var(--ease),
@@ -596,6 +597,7 @@ strong{font-weight:600}
   .hero__img--mob{display:block}
   .hero__frame{aspect-ratio:4/3}
   #salon .split__media{display:none}
+  #salon .salon__intro{display:none}
   /* Carta de servicios: apilar para que no se corte el texto */
   .menu-list__item{flex-direction:column;align-items:flex-start;gap:3px;padding:13px 0}
   .menu-list__dots{display:none}
