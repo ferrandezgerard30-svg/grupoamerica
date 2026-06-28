@@ -6,7 +6,7 @@
 <title>América · Peluquería, Barbería y Estética en Burgos</title>
 <meta name="description" content="América — peluquería, barbería y centro de estética en Burgos (C/ San Roque 2). Decoloraciones, balayage, color, mechas, barbería, uñas y tratamientos. 4,5★ en Google.">
 <meta name="theme-color" content="#FBF8F2">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2040%2040%22%3E%0A%20%20%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%229%22%20fill%3D%22%232C2722%22/%3E%0A%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23FBF8F2%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2214.5%22%20stroke-width%3D%221.3%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2214.4%22%20cy%3D%2225.4%22%20r%3D%222.1%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2225.6%22%20cy%3D%2225.4%22%20r%3D%222.1%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.1%2023.9%2027%2013.4%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M23.9%2023.9%2013%2013.4%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cpath%20d%3D%22M20%209.2l1.9%203.3h-3.8z%22%20fill%3D%22%23C0857C%22/%3E%0A%3C/svg%3E%0A" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2040%2040%22%3E%0A%20%20%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%229%22%20fill%3D%22%232C2722%22/%3E%0A%20%20%3Cpath%20d%3D%22M12%2029%20L20%2011%20L28%2029%22%20fill%3D%22none%22%20stroke%3D%22%23FBF8F2%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M15.6%2022.8%20H24.4%22%20fill%3D%22none%22%20stroke%3D%22%23C0857C%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22/%3E%0A%3C/svg%3E%0A" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="América · Peluquería, Barbería y Estética en Burgos">
 <meta property="og:description" content="América — peluquería, barbería y centro de estética en Burgos (C/ San Roque 2). Decoloraciones, balayage, color, mechas, barbería, uñas y tratamientos. 4,5★ en Google.">
@@ -189,7 +189,6 @@ strong{font-weight:600}
 .header.is-scrolled{box-shadow:var(--sh-sm)}
 .header__in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:var(--header-h)}
 .brand{display:inline-flex;align-items:center;gap:12px;line-height:1}
-.brand__mark{width:38px;height:38px;flex:none;color:var(--cocoa)}
 .brand__text{display:flex;flex-direction:column;gap:2px}
 .brand__name{font-family:var(--display);font-weight:600;font-size:1.5rem;letter-spacing:-.01em;color:var(--ink)}
 .brand__sub{font-family:var(--body);font-weight:500;font-size:.6rem;letter-spacing:.26em;
@@ -208,21 +207,60 @@ strong{font-weight:600}
 .header__cta .btn{min-height:44px;padding:.6em 1.15em;font-size:.92rem}
 
 .nav-toggle{display:none;width:46px;height:46px;align-items:center;justify-content:center;
-  border:1px solid var(--line);border-radius:var(--r-xs);background:var(--paper);color:var(--cocoa)}
-.nav-toggle svg{width:22px;height:22px}
-.nav-toggle .ico-close{display:none}
+  border:1px solid var(--line);border-radius:var(--r-xs);background:var(--paper);color:var(--cocoa);
+  -webkit-tap-highlight-color:transparent;transition:background var(--t) var(--ease),border-color var(--t) var(--ease)}
+.nav-toggle:hover{background:var(--beige-200)}
+.nav-toggle__box{position:relative;width:22px;height:16px;display:block}
+.nav-toggle__line{position:absolute;left:0;width:100%;height:2px;border-radius:2px;background:currentColor;
+  transition:transform .32s var(--ease),opacity .18s var(--ease),top .32s var(--ease)}
+.nav-toggle__line:nth-child(1){top:0}
+.nav-toggle__line:nth-child(2){top:7px}
+.nav-toggle__line:nth-child(3){top:14px}
+.nav-toggle[aria-expanded="true"]{background:var(--beige-200)}
+.nav-toggle[aria-expanded="true"] .nav-toggle__line:nth-child(1){top:7px;transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .nav-toggle__line:nth-child(2){opacity:0;transform:scaleX(.3)}
+.nav-toggle[aria-expanded="true"] .nav-toggle__line:nth-child(3){top:7px;transform:rotate(-45deg)}
 
 /* Mobile menu */
-.menu{position:fixed;inset:0;z-index:55;background:var(--cream);
-  padding:calc(var(--header-h) + 24px) var(--pad-x) 40px;
-  display:flex;flex-direction:column;gap:8px;overflow-y:auto;overscroll-behavior:contain;
-  opacity:0;visibility:hidden;transform:translateY(-8px);
-  transition:opacity var(--t) var(--ease),transform var(--t) var(--ease),visibility var(--t)}
-.menu.is-open{opacity:1;visibility:visible;transform:none}
-.menu__link{font-family:var(--display);font-size:2rem;font-weight:500;color:var(--ink);
-  padding:12px 0;border-bottom:1px solid var(--line-soft);display:flex;align-items:center;justify-content:space-between}
-.menu__link svg{width:20px;height:20px;color:var(--rose-deep)}
-.menu__foot{margin-top:auto;padding-top:28px;display:flex;flex-direction:column;gap:16px}
+.menu{position:fixed;inset:0;z-index:55;background:
+  radial-gradient(120% 80% at 100% 0%, var(--beige-200) 0%, transparent 55%),
+  radial-gradient(90% 60% at 0% 100%, #F6EFE3 0%, transparent 50%), var(--cream);
+  padding:calc(var(--header-h) + 20px) var(--pad-x) 32px;
+  display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;
+  opacity:0;visibility:hidden;transition:opacity .32s var(--ease),visibility .32s}
+.menu.is-open{opacity:1;visibility:visible}
+.menu__link{position:relative;font-family:var(--display);font-size:clamp(1.7rem,1.3rem + 2.4vw,2.3rem);
+  font-weight:500;color:var(--ink);padding:15px 0;border-bottom:1px solid var(--line-soft);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .45s var(--ease),transform .45s var(--ease),color var(--t) var(--ease)}
+.menu.is-open .menu__link{opacity:1;transform:none}
+.menu.is-open .menu__link:nth-child(1){transition-delay:.05s}
+.menu.is-open .menu__link:nth-child(2){transition-delay:.10s}
+.menu.is-open .menu__link:nth-child(3){transition-delay:.15s}
+.menu.is-open .menu__link:nth-child(4){transition-delay:.20s}
+.menu.is-open .menu__link:nth-child(5){transition-delay:.25s}
+.menu__link > span{display:inline-flex;align-items:center}
+.menu__link svg{width:22px;height:22px;color:var(--rose-deep);opacity:.5;
+  transition:transform var(--t) var(--ease),opacity var(--t) var(--ease)}
+.menu__link:hover svg,.menu__link:focus-visible svg{transform:translateX(5px);opacity:1}
+.menu__link[aria-current="page"]{color:var(--rose-deep)}
+.menu__link[aria-current="page"] svg{opacity:1}
+.menu__link[aria-current="page"] > span::before{content:"";width:20px;height:2px;border-radius:2px;
+  background:var(--rose);margin-right:14px;flex:none}
+.menu__foot{margin-top:auto;padding-top:30px;display:flex;flex-direction:column;gap:18px;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .45s var(--ease) .28s,transform .45s var(--ease) .28s}
+.menu.is-open .menu__foot{opacity:1;transform:none}
+.menu__eyebrow{font-family:var(--body);font-weight:500;font-size:.74rem;text-transform:uppercase;
+  letter-spacing:.2em;color:var(--rose-deep)}
+.menu__meta{display:flex;flex-direction:column;gap:9px}
+.menu__meta span{display:inline-flex;align-items:center;gap:11px;color:var(--mocha-600);font-size:.92rem}
+.menu__meta svg{width:17px;height:17px;color:var(--rose);flex:none}
+.menu__ig{display:inline-flex;align-items:center;gap:11px;color:var(--cocoa);font-weight:500;
+  font-size:.95rem;width:fit-content;border-bottom:1px solid transparent;transition:border-color var(--t) var(--ease)}
+.menu__ig:hover{border-color:var(--rose)}
+.menu__ig svg{width:20px;height:20px;flex:none}
 .menu__socials{display:flex;gap:12px}
 
 /* ---------- Hero ---------- */
@@ -440,7 +478,6 @@ strong{font-weight:600}
   padding-bottom:46px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer .brand__name{color:#fff}
 .footer .brand__sub{color:#A99B86}
-.footer .brand__mark{color:#fff}
 .footer__about{margin-top:20px;color:#B6A892;font-size:.95rem;max-width:34ch}
 .footer__socials{display:flex;gap:10px;margin-top:22px}
 .footer .s-icon{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#fff}
@@ -514,20 +551,33 @@ strong{font-weight:600}
 
 /* ---------- Ajustes finos móvil ---------- */
 @media (max-width:600px){
-  .section{padding-block:clamp(52px,9vw,72px)}
-  .section--tight{padding-block:clamp(40px,7vw,64px)}
-  .section-head{margin-bottom:30px}
-  .hero__grid{padding-block:34px 14px;gap:34px}
+  .section{padding-block:clamp(46px,8vw,72px)}
+  .section--tight{padding-block:clamp(36px,6vw,60px)}
+  .section-head{margin-bottom:26px}
+  .hero__grid{padding-block:30px 12px;gap:30px}
   .h-display{font-size:clamp(2.3rem,1.55rem + 4vw,3rem)}
-  .hero__lead{margin-bottom:26px}
-  .lead{font-size:1.08rem}
+  .hero__lead{margin-bottom:24px}
+  .lead{font-size:1.07rem}
+  /* Tarjetas de servicio compactas: menos alto, más ordenado */
+  .svc{padding:22px 22px}
+  .svc__ico{width:46px;height:46px;margin-bottom:15px}
+  .svc__ico svg{width:23px;height:23px}
+  .svc h3{margin-bottom:7px}
+  .svc p{font-size:.95rem}
+  .svc__list{display:none}
+  /* Datos compactos */
+  .facts{gap:10px;margin-top:22px}
+  .fact{padding:15px 16px}
+  .fact .n{font-size:1.6rem}
+  /* Galería: vista previa más corta en móvil (6 fotos) */
+  .gallery--preview .gallery__item:nth-child(n+7){display:none}
   /* Carta de servicios: apilar para que no se corte el texto */
-  .menu-list__item{flex-direction:column;align-items:flex-start;gap:3px;padding:14px 0}
+  .menu-list__item{flex-direction:column;align-items:flex-start;gap:3px;padding:13px 0}
   .menu-list__dots{display:none}
   .menu-list__meta{text-align:left;font-size:.86rem}
   .menu-list__name{font-size:1.05rem}
   /* CTA band más ajustada */
-  .cta-band{padding:clamp(34px,7vw,72px) clamp(22px,5vw,64px)}
+  .cta-band{padding:clamp(32px,7vw,72px) clamp(22px,5vw,64px)}
   /* Captions de galería */
   .gallery__cap{font-size:.78rem;left:11px;right:11px;bottom:11px}
   .gallery__cap svg{width:13px;height:13px}
@@ -543,7 +593,7 @@ strong{font-weight:600}
 @media print{.header,.topbar,.menu,.cta-band,.lightbox{display:none}}
 
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HairSalon", "name": "América — Peluquería, Barbería y Estética", "image": "assets/img/salon-interior.webp", "address": {"@type": "PostalAddress", "streetAddress": "Calle San Roque 2, Bajo", "postalCode": "09006", "addressLocality": "Burgos", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.348531, "longitude": -3.679521}, "telephone": "+34605586074", "url": "", "priceRange": "€€", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "215"}, "sameAs": ["https://www.instagram.com/grupo.americaa/"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HairSalon", "name": "América — Peluquería, Barbería y Estética", "image": "assets/img/salon-interior.webp", "address": {"@type": "PostalAddress", "streetAddress": "Calle San Roque 2, Bajo", "postalCode": "09006", "addressLocality": "Burgos", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.348531, "longitude": -3.679521}, "telephone": "+34605586074", "url": "", "priceRange": "€€", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "17:00", "closes": "21:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "215"}, "sameAs": ["https://www.instagram.com/grupo.americaa/"]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -563,14 +613,6 @@ strong{font-weight:600}
 <header class="header">
   <div class="container header__in">
     <a class="brand" href="index.html" aria-label="América — Inicio">
-      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.4"/>
-        <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="14.4" cy="25.8" r="2.3"/><circle cx="25.6" cy="25.8" r="2.3"/>
-          <path d="M16.2 24.1 28 12"/><path d="M23.8 24.1 12 12"/>
-        </g>
-        <path d="M20 7.4l2.1 3.6h-4.2z" fill="#C0857C"/>
-      </svg>
       <span class="brand__text">
         <span class="brand__name">América</span>
         <span class="brand__sub">Peluquería · Estética</span>
@@ -587,26 +629,31 @@ strong{font-weight:600}
       <a class="btn btn--whatsapp" href="https://wa.me/34605586074?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita%20en%20Am%C3%A9rica" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reservar</a>
     </div>
     <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-      <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span class="nav-toggle__box" aria-hidden="true">
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+      </span>
     </button>
   </div>
 </header>
 <nav class="menu" id="mobile-menu" aria-label="Menú móvil">
-  <a class="menu__link" href="index.html">Inicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  <a class="menu__link" href="servicios.html">Servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  <a class="menu__link" href="galeria.html">Galería <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  <a class="menu__link" href="opiniones.html">Opiniones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  <a class="menu__link" href="contacto.html">Contacto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="menu__link" aria-current="page" href="index.html"><span>Inicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="menu__link" href="servicios.html"><span>Servicios</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="menu__link" href="galeria.html"><span>Galería</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="menu__link" href="opiniones.html"><span>Opiniones</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="menu__link" href="contacto.html"><span>Contacto</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <div class="menu__foot">
+    <p class="menu__eyebrow">Reserva tu cita</p>
     <div class="btn-row">
       <a class="btn btn--whatsapp btn--block" href="https://wa.me/34605586074?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita%20en%20Am%C3%A9rica" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
       <a class="btn btn--outline btn--block" href="tel:+34605586074"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Llamar</a>
     </div>
-    <div class="menu__socials">
-      <a class="s-icon" href="https://www.instagram.com/grupo.americaa/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-      <a class="s-icon" href="https://wa.me/34605586074?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita%20en%20Am%C3%A9rica" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    <div class="menu__meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Calle San Roque 2, Burgos</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Lun–Sáb 10–14 y 17–21 h</span>
     </div>
+    <a class="menu__ig" href="https://www.instagram.com/grupo.americaa/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg> @grupo.americaa</a>
   </div>
 </nav>
 <main id="main">
@@ -818,11 +865,10 @@ strong{font-weight:600}
         <div class="reveal">
           <div class="info-list">
             <div class="info"><div class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="info__k">Dirección</div><div class="info__v">Calle San Roque 2, Bajo · 09006 Burgos</div></div></div>
-            <div class="info"><div class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="info__k">Teléfono</div><div class="info__v"><a href="tel:+34605586074">605 58 60 74</a> · <a href="tel:+34947653799">947 65 37 99</a></div></div></div>
+            <div class="info"><div class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="info__k">Teléfono</div><div class="info__v"><a href="tel:+34605586074">605 58 60 74</a></div></div></div>
             <div class="info"><div class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><div class="info__k">Horario</div><div class="info__v">
               <div class="hours">
-                <div class="hours__row"><span>Lunes a viernes</span><span>10:00 – 21:00</span></div>
-                <div class="hours__row"><span>Sábado</span><span>10:00 – 14:00</span></div>
+                <div class="hours__row"><span>Lunes a sábado</span><span>10:00–14:00 · 17:00–21:00</span></div>
                 <div class="hours__row hours__row--off"><span>Domingo</span><span>Cerrado</span></div>
               </div>
             </div></div></div>
@@ -869,14 +915,6 @@ strong{font-weight:600}
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="brand" href="index.html" aria-label="América — Inicio">
-          <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.4"/>
-            <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="14.4" cy="25.8" r="2.3"/><circle cx="25.6" cy="25.8" r="2.3"/>
-              <path d="M16.2 24.1 28 12"/><path d="M23.8 24.1 12 12"/>
-            </g>
-            <path d="M20 7.4l2.1 3.6h-4.2z" fill="#C0857C"/>
-          </svg>
           <span class="brand__text"><span class="brand__name">América</span><span class="brand__sub">Peluquería · Estética</span></span>
         </a>
         <p class="footer__about">Peluquería, barbería y centro de estética en el centro de Burgos. Color, decoloración, cortes y belleza con un trato cercano.</p>
@@ -903,8 +941,8 @@ strong{font-weight:600}
         <h4>Contacto</h4>
         <ul class="footer__contact">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Calle San Roque 2, Bajo<br>09006 Burgos</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><a href="tel:+34605586074">605 58 60 74</a> · <a href="tel:+34947653799">947 65 37 99</a></span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Lun–Vie 10:00–21:00<br>Sáb 10:00–14:00 · Dom cerrado</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><a href="tel:+34605586074">605 58 60 74</a></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Lun–Sáb 10:00–14:00 y 17:00–21:00<br>Domingo cerrado</span></li>
         </ul>
       </div>
     </div>
@@ -943,8 +981,7 @@ strong{font-weight:600}
       menu.classList.toggle('is-open', open);
       document.body.classList.toggle('menu-open', open);
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.querySelector('.ico-open').style.display = open ? 'none' : '';
-      toggle.querySelector('.ico-close').style.display = open ? 'block' : 'none';
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     };
     toggle.addEventListener('click', function () {
       setMenu(!menu.classList.contains('is-open'));
